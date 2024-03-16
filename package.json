@@ -1,0 +1,30 @@
+{
+  "name": "problems",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "watch": "node watch.mjs",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist .build .esbuild",
+    "lint": "tsc --noEmit && eslint \"src/**/*.ts*\"",
+    "test": "jest --detectOpenHandles",
+    "update-packages": "ncu -u"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.28",
+    "esbuild": "^0.20.2",
+    "eslint": "^8.57.0",
+    "glob": "^10.3.10",
+    "jest": "^29.7.0",
+    "npm-check-updates": "^16.14.17",
+    "prettier": "latest",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.2"
+  },
+  "resolutions": {},
+  "engines": {
+    "node": ">=20"
+  }
+}
