@@ -1,0 +1,52 @@
+[project]
+name = "problems"
+version = "0.0.0"
+requires-python = ">=3.11"
+dependencies = [
+]
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+# ref: https://github.com/pdm-project/pdm/issues/2189
+[tool.pdm.options]
+lock = ["--no-cross-platform"]
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.scripts]
+install-all = "pdm install -G:all"
+post_install = "pdm requirements"
+lint = "ruff check src"
+format = "ruff format ."
+requirements = "pdm export -o requirements.txt"
+clean = "rm -rf .venv .pdm-build .pdm-python .ruff_cache dist"
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "ruff>=0.1.11",
+    "pytest>=7.4.4",
+]
+
+[tool.pdm.build]
+excludes = ["./**/.git"]
+package-dir = "src"
+includes = ["src/**/*.py"]
+source-includes = ["tests", "LICENSE", "README.md", "requirements.txt"]
+
+[tool.ruff]
+exclude = [
+  ".git",
+  ".venv",
+  "__pycache__",
+  "*.bak",
+  "*.pyc",
+]
+line-length = 100
+indent-width = 2
+target-version = "py311"
+
+[tool.ruff.format]
+quote-style = "single"
