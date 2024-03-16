@@ -20,7 +20,7 @@ def test_20():
     validate(s, False)
 
 
-def validate(string: str, outcome=True) -> bool:
+def validate(string: str, outcome=True):
   valid = Solution().isValid(string)
   print(f'{string} is {"valid" if valid else "invalid"}')
   if outcome:
