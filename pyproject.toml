@@ -23,6 +23,7 @@ lint = "ruff check src"
 format = "ruff format ."
 requirements = "pdm export -o requirements.txt"
 clean = "rm -rf .venv .pdm-build .pdm-python .ruff_cache dist"
+test = "pytest"
 
 [tool.pdm.dev-dependencies]
 dev = [
