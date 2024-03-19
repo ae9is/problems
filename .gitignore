@@ -323,3 +323,4 @@ dist
 .pnp.*
 
 *.bak
+*.txt
